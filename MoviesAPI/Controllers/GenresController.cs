@@ -43,7 +43,7 @@ namespace MoviesAPI.Controllers
                 return NotFound($"No Genre was found by Id {id}");
             }
             genre.Name = dtoModel.Name;
-            
+            // all Properties will be sent to the database so we need to send also the Id
             // context.Entry(genre).State = EntityState.Modified;
             context.SaveChanges();
             return Ok(genre);
